@@ -16,7 +16,6 @@ import fondo from "../assets/fondo.png";
 
 // Estilos
 export const Contenedor = styled.section`
-  background-color: #fafafa;
 
 &.cajascontent{
   background-color:white;
@@ -26,12 +25,14 @@ export const Contenedor = styled.section`
   padding: 10px;
   display: flex;
   align-items: center;
-  margin: 250px;
+  margin: 80px;
 
   @media (max-width: 768px) {
     flex-direction: column; /* Cambiar a diseño de columna para pantallas más pequeñas */
       align-items: center; /* Centrar elementos */
-      margin: 10px; /* Cambiar margen */
+      margin: -3px; /* Cambiar margen */
+      width: 100%;
+      height: 100%;
   }
 }
 `;
@@ -42,30 +43,42 @@ background-color:#eeeeee;
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in-out;
-  padding: 10px;
+  padding: 5px;
   flex: 1;
   margin: 10px;
-  flex-grow: 1;
-  flex-basis: 0;
   margin-left: 20px;
   border-radius: 16px;
 
   &:hover {
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
+    border-color: black;
   }
 
   @media (max-width: 768px) {
-    margin: 5px; /* Cambiar el margen para pantallas más pequeñas */  }
+    width: 90%;
+    height: 30%;
+    position: relative;
+    align-items: center;
+
+
+  }
 `;
 
 export const Images = styled.img`
-  width: 274px;
-  height: 224px;
+  width: 200px;
+  height: 150px;
   padding: 5px;
   transition: transform 0.2s, box-shadow 0.2s; /* Agrega una transición suave */
-
+  align-self: center;
   &:hover:not(.ultimo) {
     transform: scale(1.1);
+  }
+  @media (max-width: 768px) {
+  margin-right: 160px;
+  width: 150px;
+  height: 110px;
+
+
   }
 
   &.ultimo {
@@ -73,6 +86,16 @@ export const Images = styled.img`
     width: 90%;
     height: 90%;
     padding-left: 70px;
+
+    @media (max-width: 768px) {
+
+    width: 98%;
+    height: 98%;
+    align-items: center;
+    margin-left: -40px;
+
+  }
+    
   }
 `;
 
@@ -80,11 +103,19 @@ export const Textos = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-grow: 1;
+   padding: 10px;
+   text-align: left;
+   margin-top:-150px;
+   margin-left: 162px;
+
+  }
 `;
 
 export const Tit = styled.h3`
   font-family: "Segoe UI";
-  color: grey;
+  color: #000000;
   margin: 0;
 
   &.verde {
@@ -119,7 +150,6 @@ export const Descuento = styled.p`
 `;
 
 export const Boton = styled.button`
-  text-transform: none;
   height: 42px;
   font-size: 1.2rem;
   padding: 4px 11px;
@@ -129,14 +159,24 @@ export const Boton = styled.button`
   border-radius: 16px;
   margin-left: 11px;
   margin-right: 24px;
+
   &:hover {
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
     background-color: #373636;
+    border-color: black;
+
   }
+
 `;
 
 export const Content = styled.span`
   color: white;
+  @media (max-width: 768px) {
+  font-family: sans-serif;
+   font-size: 0.8rem;
+   color: black;
+
+  }
 `;
 
 //corazon
@@ -149,60 +189,60 @@ align-items: self-end
 // Componente
 
 
-const comidas = [
-  { id: 1, nombre: "Hamburguesa", precio: 50, imagen: comida1 },
-  { id: 2, nombre: "pizza", precio:50, imagen: comida2},
-  {id: 3, nombre: "rara", precio:50, imagen: comida3},
-  {id: 4, nombre: "comida", precio:50, imagen: comida4},
-  {id: 5, nombre: "comida", precio: 50, imagen: comida5}, 
-  {id: 6, nombre: "comida", precio:50, imagen: comida6},
-  {id: 7, nombre: "comida", precio:50, imagen: comida7},
-  {id: 8, nombre: "comida", precio:50, imagen: comida8}
+  const comidas = [
+    { id: 1, nombre: "Hamburguesa", precio: 50, imagen: comida1 },
+    { id: 2, nombre: "pizza", precio:50, imagen: comida2},
+    {id: 3, nombre: "comida", precio:50, imagen: comida3},
+    {id: 4, nombre: "comida", precio:50, imagen: comida4},
+    {id: 5, nombre: "comida", precio: 50, imagen: comida5}, 
+    {id: 6, nombre: "comida", precio:50, imagen: comida6},
+    {id: 7, nombre: "comida", precio:50, imagen: comida7},
+    {id: 8, nombre: "comida", precio:50, imagen: comida8}
 
 
-];
-function CardsPopular() {
+  ];
+  function CardsPopular() {
+    // Crea un array de estados para los colores de los corazones
+    const [heartColors, setHeartColors] = useState(Array(comidas.length).fill('initial'));
 
-  const [heartColor, setHeartColor] = useState("initial");
+    // Función para cambiar el color del corazón de una tarjeta específica
+    const handleHeartClick = (index) => {
+      const newHeartColors = [...heartColors];
+      newHeartColors[index] = heartColors[index] === 'initial' ? 'red' : 'initial';
+      setHeartColors(newHeartColors);
+    };
 
-  const handleHeartClick = () => {
-    if (heartColor === "initial") {
-      setHeartColor("red");
-    } else {
-      setHeartColor("initial");
-    }
-  };
-  return (
-    <Contenedor className="cajas">
-      <Tit className="verde">Popular food</Tit>
-      <Tit className="Tnegro">Our Special Dishes</Tit>
-      <Contenedor className="cajascontent">
-        {comidas.map((comida) => (
-          <Cartas key={comida.id}>
-            <Corazon
-              onClick={handleHeartClick}
-              color={heartColor}
-            />
-            <Images src={comida.imagen} alt={comida.nombre} className="imagenes" />
+    return (
+      <Contenedor className="cajas">
+        <Tit className="verde">Popular food</Tit>
+        <Tit className="Tnegro">Our Special Dishes</Tit>
+        <Contenedor className="cajascontent">
+          {comidas.map((comida, index) => (
+            <Cartas key={comida.id}>
+              <Corazon
+                onClick={() => handleHeartClick(index)}
+                color={heartColors[index]}
+              />
+              <Images src={comida.imagen} alt={comida.nombre} className="imagenes" />
 
-            <Textos>
-              <Tit>{comida.nombre}</Tit>
-              <Rating />
-              <Precio>
-                <Cont>s/{comida.precio}</Cont>
-                <Descuento className="descuento">s/{comida.precio}</Descuento>
-              </Precio>
+              <Textos>
+                <Tit>{comida.nombre}</Tit>
+                <Rating />
+                <Precio>
+                  <Cont>s/{comida.precio}</Cont>
+                  <Descuento className="descuento">s/{comida.precio}</Descuento>
+                </Precio>
 
-              <Boton src="#">
-                <Content>Añadir a la carta</Content>
-              </Boton>
-            </Textos>
-          </Cartas>
-        ))}
+                <Boton src="#">
+                  <Content>Añadir a la carta</Content>
+                </Boton>
+              </Textos>
+            </Cartas>
+          ))}
+        </Contenedor>
+        <Images img src={fondo} className="ultimo"></Images>
       </Contenedor>
-      <Images img src={fondo} className="ultimo"></Images>
-    </Contenedor>
-  );
-}
+    );
+  }
 
 export default CardsPopular;
