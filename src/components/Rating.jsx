@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 export const StarIcon = styled(FaStar)`
   cursor: pointer;
   size: 15px;
+  border-color:black;
 `;
 
 function Rating() {
@@ -18,7 +19,7 @@ function Rating() {
         return (
           <StarIcon
             key={currentRating}
-            color={currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+            color={currentRating <= (hover || rating) ? "#ffc107" : "#999999"}
             onMouseEnter={() => setHover(currentRating)}
             onMouseLeave={() => setHover(null)}
             onClick={() => setRating(currentRating)}
