@@ -2,7 +2,7 @@ import { FaHeart } from "react-icons/fa";
 import styled from '@emotion/styled'
 import Rating from './Rating'
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react'; // Importa useState y useEffect
 
 import comida1 from "../assets/comida1.png";
 import comida2 from "../assets/comida2.png";
@@ -48,6 +48,7 @@ background-color:#eeeeee;
   margin: 10px;
   margin-left: 20px;
   border-radius: 16px;
+  
 
   &:hover {
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
@@ -55,7 +56,7 @@ background-color:#eeeeee;
   }
 
   @media (max-width: 768px) {
-    width: 90%;
+    width:  90%;
     height: 30%;
     position: relative;
     align-items: center;
@@ -81,22 +82,9 @@ export const Images = styled.img`
 
   }
 
-  &.ultimo {
-    align-items: center;
-    width: 90%;
-    height: 90%;
-    padding-left: 70px;
 
-    @media (max-width: 768px) {
-
-    width: 98%;
-    height: 98%;
-    align-items: center;
-    margin-left: -40px;
-
-  }
     
-  }
+
 `;
 
 export const Textos = styled.div`
@@ -118,16 +106,24 @@ export const Tit = styled.h3`
   color: #000000;
   margin: 0;
 
+
   &.verde {
     font-family: var(--satisfy-font);
     color: green;
     text-align: center;
     font-size: 2rem;
+    transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
   }
   &.Tnegro {
     color: black;
     text-align: center;
+    transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
 
+  }
+  &.animated {
+    transform: translateY(0);
   }
 `;
 
@@ -202,6 +198,15 @@ align-items: self-end
 
   ];
   function CardsPopular() {
+
+
+    useEffect(() => {
+    // Aplicar la clase "animated" después de que la página se cargue
+    const titElements = document.querySelectorAll('.verde, .Tnegro');
+    titElements.forEach((element) => {
+      element.classList.add('animated');
+    });
+  }, []);
     // Crea un array de estados para los colores de los corazones
     const [heartColors, setHeartColors] = useState(Array(comidas.length).fill('initial'));
 
@@ -211,6 +216,7 @@ align-items: self-end
       newHeartColors[index] = heartColors[index] === 'initial' ? 'red' : 'initial';
       setHeartColors(newHeartColors);
     };
+
 
     return (
       <Contenedor className="cajas">
@@ -240,7 +246,6 @@ align-items: self-end
             </Cartas>
           ))}
         </Contenedor>
-        <Images img src={fondo} className="ultimo"></Images>
       </Contenedor>
     );
   }
