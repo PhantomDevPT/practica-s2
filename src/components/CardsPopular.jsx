@@ -12,7 +12,6 @@ import comida5 from "../assets/comida5.png";
 import comida6 from "../assets/comida6.png";
 import comida7 from "../assets/comida7.png";
 import comida8 from "../assets/comida8.png";
-import fondo from "../assets/fondo.png";
 
 // Estilos
 export const Contenedor = styled.section`
