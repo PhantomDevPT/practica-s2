@@ -5,7 +5,7 @@ import Papitas from "../assets/PAPITAS.png";
 import Fideos from "../assets/FIDEOS.png";
 
 const Contenedor = styled.main`
-  margin-top: 100px;
+  margin-top: -11px;
   display: flex;
   justify-content: center;
   align-items: center;
