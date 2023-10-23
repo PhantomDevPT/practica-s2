@@ -1,9 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Card from "./components/card";
+import plates from "./data/plates";
+import styled from "@emotion/styled";
+import './App.css';
+import { Section } from './components/Section'
+
+
+const CardsContainer = styled.div`
+width: 100%;
+display : flex;
+justify-content: center;
+align-items: center;
+gap : 20px;
+`
 
 function App() {
+<<<<<<< HEAD
+  return (
+    <>
+    <CardsContainer>
+      {plates.map(element => 
+        <Card  key={element.id}
+        name={element.name}
+        img={element.image}
+        />)}
+        
+      </CardsContainer>
+    <Section/>
+=======
 
   return (
     <>
@@ -27,8 +50,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+>>>>>>> 25223176f7b3d6bd6a2739fb1528e37e9062d4e2
     </>
-  )
+  );
 }
 
 export default App
