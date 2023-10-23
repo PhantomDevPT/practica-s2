@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import fondo from "../assets/logo.png";
+import comida from "../assets/comida2.png";
 
 const Container = styled.section`
   display: flex;
@@ -91,7 +91,7 @@ function Card() {
           <Btn>Order Now</Btn>
         </Letras>
       </Content>
-      <ImgContainer src={fondo} alt="Your Image" />
+      <ImgContainer src={comida} alt="Your Image" />
     </Container>
   );
 }
