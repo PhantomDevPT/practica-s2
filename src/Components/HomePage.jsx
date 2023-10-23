@@ -16,7 +16,7 @@ const CardContainer = styled.section`
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 2%;
+  margin-top: 10%;
 
   @media (max-width: 768px) {
     flex-direction: column;
