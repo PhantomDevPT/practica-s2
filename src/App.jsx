@@ -1,26 +1,9 @@
-<<<<<<< HEAD
 import Header from './Components/Header'
 import HomePage from './Components/HomePage'
 import CardMenu from './Components/CardMenu'
 import Card2 from './Components/Card2'
 import CardsPopular from './Components/CardsPopular'
 import Rating from './Components/Rating'
-=======
-import Card from "./components/card";
-import plates from "./data/plates";
-import styled from "@emotion/styled";
-import './App.css';
-import { Section } from './components/Section'
-
-
-const CardsContainer = styled.div`
-width: 100%;
-display : flex;
-justify-content: center;
-align-items: center;
-gap : 20px;
-`
->>>>>>> 0a1dbae7764026c4a81d98281755d0132106a1f8
 
 function App() {
 <<<<<<< HEAD
