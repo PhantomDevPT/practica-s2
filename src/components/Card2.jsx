@@ -8,17 +8,29 @@ const Container = styled.section`
   align-items: center;
   background-color: #ffff00;
   margin:20px;
+  border-radius:16px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: 100%;
+
+
+  }
 `;
 
 const Content = styled.div`
   flex-direction: column;
   align-items: center;
   margin-right: -80px;
+  @media (max-width: 768px) {
+    margin-left: 153px;
+}
+
 `;
 
 const Title = styled.h1`
   color: #000000;
   font-size: 24px;
+  
 `;
 
 const SubTitle = styled.h2`
@@ -52,6 +64,8 @@ const ImgContainer = styled.img`
     margin-right: 95px;
     @media (max-width: 768px) {
         transform: scale(1.2);
+        transform: translateY(-100%);
+
 
 
   }

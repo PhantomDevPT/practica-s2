@@ -161,7 +161,13 @@ export const Boton = styled.button`
     border-color: black;
 
   }
+  @media (max-width: 768px) {
+    padding: -3px 11px;
+    margin-left: -10px;
 
+
+
+  }
 `;
 
 export const Content = styled.span`
