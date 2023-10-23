@@ -29,8 +29,8 @@ export const Contenedor = styled.section`
   @media (max-width: 768px) {
     flex-direction: column; /* Cambiar a diseño de columna para pantallas más pequeñas */
       align-items: center; /* Centrar elementos */
-      margin: -3px; /* Cambiar margen */
       width: 100%;
+      transform: translateX(-53px);
       height: 100%;
   }
 }
@@ -47,6 +47,8 @@ background-color:#eeeeee;
   margin: 10px;
   margin-left: 20px;
   border-radius: 16px;
+  max-width: 318px;
+  max-height: 313px;
   
 
   &:hover {
@@ -55,8 +57,8 @@ background-color:#eeeeee;
   }
 
   @media (max-width: 768px) {
-    width:  90%;
-    height: 30%;
+max-width: 400px;
+max-height: 150px;
     position: relative;
     align-items: center;
 
@@ -75,8 +77,8 @@ export const Images = styled.img`
   }
   @media (max-width: 768px) {
   margin-right: 160px;
-  width: 150px;
-  height: 110px;
+  width: 160px;
+  height: 120px;
 
 
   }
@@ -113,12 +115,28 @@ export const Tit = styled.h3`
     font-size: 2rem;
     transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
+  @media (max-width: 768px) {
+
+    position: relative;
+    align-items: center;
+
+
   }
+
+
+  } 
   &.Tnegro {
     color: black;
     text-align: center;
     transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
+  @media (max-width: 768px) {
+
+position: relative;
+align-items: center;
+
+
+}
 
   }
   &.animated {

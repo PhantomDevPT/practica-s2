@@ -10,23 +10,32 @@ const Container = styled.section`
   margin:20px;
   border-radius:16px;
   @media (max-width: 768px) {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 450px;;
+    max-height: 300px;
+    transform: translateX(36px);
 
 
   }
 `;
 
 const Content = styled.div`
-  flex-direction: column;
-  align-items: center;
-  margin-right: -80px;
+display: inline-table;
+    align-items: center;
+    margin-right: 150px;
   @media (max-width: 768px) {
-    margin-left: 153px;
+    display: inline-flex;
 }
 
 `;
+const Letras = styled.div`
+justify-content: space-between; /* Espacio entre los elementos */
+align-items: center;
+@media (max-width: 768px) {
+  margin-left: 308px;
 
+  }
+
+`;
 const Title = styled.h1`
   color: #000000;
   font-size: 24px;
@@ -54,21 +63,20 @@ const Btn = styled.button`
 `;
 
 const ImgContainer = styled.img`
-    width: 80%;
-    max-width: 400px;
-    -webkit-transform: scale(2.4);
-    -moz-transform: scale(2.4);
-    -ms-transform: scale(2.4);
-    transform: scale(2.2);
-    margin: 47px;
-    margin-right: 95px;
-    @media (max-width: 768px) {
-        transform: scale(1.2);
-        transform: translateY(-100%);
 
+  transform: scale(1.1);
+  margin: 47px;
+  margin-right: 95px;
 
+  @media (max-width: 768px) {
+    transform: scale(0.6);
+    transform: translateY(-3%);
+    transform: translateX(-99%);
 
+    width: 200px;
+    height: 200px;
   }
+
   
 `;
 
@@ -76,10 +84,12 @@ function Card() {
   return (
     <Container>
       <Content>
-        <Title>Double Cheese</Title>
-        <SubTitle>Burguer</SubTitle>
-        <Parrafo>With coca cola and friends</Parrafo>
-        <Btn>Order Now</Btn>
+      <Letras>
+          <Title>Double Cheese</Title>
+          <SubTitle>Burguer</SubTitle>
+          <Parrafo>With coca cola and friends</Parrafo>
+          <Btn>Order Now</Btn>
+        </Letras>
       </Content>
       <ImgContainer src={fondo} alt="Your Image" />
     </Container>
