@@ -1,7 +1,7 @@
-import styled from "styled-components"
 import platillo from './../assets/platillo-principal.png';
 import camioncito from './../assets/camioncito.jfif';
 import canastita from './../assets/canastita.jfif';
+import styled from '@emotion/styled';
 
 
 
@@ -145,3 +145,5 @@ const Contenedor = styled.section `
 
 
 ` 
+
+export default Section;
