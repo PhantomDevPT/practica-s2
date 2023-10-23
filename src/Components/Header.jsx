@@ -67,7 +67,13 @@ const Navigation = styled.nav`
 const Icons = styled.div`
   display: flex;
   align-items: center;
-  padding: 5px;
+
+
+
+  .icono-item {
+  margin-right: 10px; 
+  cursor: pointer;
+ }
 
   @media (max-width: 768px) {
     margin-top: 10px;
@@ -79,7 +85,13 @@ const Icons = styled.div`
   @media (min-width: 769px) {
     margin-right: 20px; 
   }
+
+  .icono{
+    padding:5px;
+  
+}
 `;
+
 
 
 
@@ -104,12 +116,21 @@ const Header = () => {
           <a href="/contact">Blog</a>
         </ul>
       </Navigation>
-      <Icons>
-        <FontAwesomeIcon icon={faSearch} />
-        <FontAwesomeIcon icon={faShoppingCart} />
-        <FontAwesomeIcon icon={faUser} />
-        <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
+      <Icons className='icono'>
+        <div className='icono-item'>
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+        <div className='icono-item'>
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </div>
+        <div className='icono-item'>
+          <FontAwesomeIcon icon={faUser} />
+        </div>
+        <div className='icono-item'>
+          <FontAwesomeIcon icon={faBars} onClick={toggleMenu} />
+        </div>
       </Icons>
+
     </HeaderContainer>
   );
 };
