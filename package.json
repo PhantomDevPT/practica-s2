@@ -14,8 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.0"
-=======
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/fontawesome-svg-core" : ":^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
@@ -26,7 +25,6 @@
     "react-icons": "^4.11.0",
     "styled": "^1.0.0",
     "styled-components": "^6.1.0"
->>>>>>> 25223176f7b3d6bd6a2739fb1528e37e9062d4e2
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
