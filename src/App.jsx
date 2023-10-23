@@ -5,6 +5,7 @@ import Card2 from './Components/Card2'
 import CardsPopular from './Components/CardsPopular'
 import Rating from './Components/Rating'
 import Section from './Components/Section'
+import CardsContainer from './Components/CardsContainer'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Card2 />
       <HomePage />
       <CardMenu />
+     <CardsContainer /> 
     <Section/>
       </>)
 }

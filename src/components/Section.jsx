@@ -14,7 +14,7 @@ export const Section = () => {
 
       <div className="contenedor__main">
         <div className="contenedor__body">
-          <h4>Why choose var</h4>
+          <H4Why>Why choose us </H4Why>
           <h2> What's Make Our Food Delicious!</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sit atque aspernatur amet eaque laboriosam animi omnis inventore veritatis delectus!</p>
           <button>Read More</button>
@@ -61,13 +61,11 @@ const Contenedor = styled.section `
 
 
 
-
   .contenedor__main{
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     .contenedor__body{
       display: flex;
@@ -141,9 +139,14 @@ const Contenedor = styled.section `
       }
     
   }
-  
+` ;
 
 
-` 
+const H4Why = styled.h4`
+font-weight: bold;
+font-family: 'Moon Dance', cursive;
+`;
+
+
 
 export default Section;
